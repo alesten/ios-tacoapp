@@ -48,4 +48,34 @@ struct Taco {
     var proteinId: TacoProtein {
         return _proteinId
     }
+    
+    init(id: Int, productName: String, shellId: Int, proteinId: Int, condimentId: Int) {
+        _id = id
+        _productName = productName
+        
+        switch shellId {
+        case 2:
+            _shellId = TacoShell.Corn
+        default:
+            _shellId = TacoShell.Flour
+        }
+        
+        switch proteinId {
+        case 2:
+            _proteinId = TacoProtein.Chicken
+        case 3:
+            _proteinId = TacoProtein.Brisket
+        case 4:
+            _proteinId = TacoProtein.Fish
+        default:
+            _proteinId = TacoProtein.Beef
+        }
+        
+        switch condimentId {
+        case 2:
+            _condimentId = TacoCondiment.Plain
+        default:
+            _condimentId = TacoCondiment.Loaded
+        }
+    }
 }
