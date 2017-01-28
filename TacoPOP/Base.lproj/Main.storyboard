@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,15 +40,31 @@
                                     <constraint firstItem="dSx-et-q7n" firstAttribute="centerY" secondItem="orE-PH-zUA" secondAttribute="centerY" id="oyp-vo-S4S"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nqt-bn-3gn">
+                                <rect key="frame" x="16" y="100" width="343" height="547"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d0o-QV-Xux">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nqt-bn-3gn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6c7-fO-hH6"/>
                             <constraint firstItem="orE-PH-zUA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Oww-97-xbQ"/>
                             <constraint firstItem="orE-PH-zUA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fie-cS-xUz"/>
+                            <constraint firstItem="nqt-bn-3gn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="h36-Ru-Uq0"/>
                             <constraint firstAttribute="trailing" secondItem="orE-PH-zUA" secondAttribute="trailing" id="kzX-CV-6AO"/>
+                            <constraint firstItem="nqt-bn-3gn" firstAttribute="top" secondItem="orE-PH-zUA" secondAttribute="bottom" constant="20" id="mRN-xy-F5a"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nqt-bn-3gn" secondAttribute="bottom" constant="20" id="ynB-Vg-aw5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="nqt-bn-3gn" id="QeA-KO-hkB"/>
                         <outlet property="headerView" destination="orE-PH-zUA" id="Ezd-oy-ID4"/>
                     </connections>
                 </viewController>
